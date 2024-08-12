@@ -28,5 +28,16 @@
             }
             return result;
         }
+
+        public List<int> Find_excludeMultiple(int maxNum)
+        {
+            List<int> dividends = Enumerable.Range(2, maxNum - 2).ToList();
+            foreach (int i in dividends)
+            {
+                dividends.RemoveAll(d => d % i == 0 && d != i);
+            }
+            return dividends;
+
+        }
     }
 }
