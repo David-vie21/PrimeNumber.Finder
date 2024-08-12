@@ -32,11 +32,12 @@
         public List<int> Find_excludeMultiple(int maxNum)
         {
             List<int> dividends = Enumerable.Range(2, maxNum - 2).ToList();
+            List<int> dividends2 = dividends.ToList();
             foreach (int i in dividends)
             {
-                dividends.RemoveAll(d => d % i == 0 && d != i);
+                dividends2.RemoveAll(d => d % i == 0 && d != i);
             }
-            return dividends;
+            return dividends2;
 
         }
     }
